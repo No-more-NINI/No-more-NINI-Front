@@ -1,17 +1,37 @@
 package com.app.nomorenini.model;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Date;
 
 public class User {
-	int id;
+	public int id;
 	String name; //max 100
 	String address; //max 100
 	Date birthdate; //max 18 yo
-	String email;//max 100
+	public String email;//max 100
 	String password; //max 50
 	float latitude;
 	float longitude;
 
+	public User(JSONObject jsonObject) {
+		try {
+			id=jsonObject.getInt("id");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static int getType(User u){
+		if(u instanceof Employee)return 0;
+		else if(u instanceof Company)return 1;
+		return 2;
+	}
+	public User(String email){
+		this.email=email;
+		this.password="";
+	}
 	public User(String name,Date birthdate,String email,String pass){
 		this.name=name;
 		this.birthdate=birthdate;

@@ -1,7 +1,7 @@
 package com.app.nomorenini.model;
 
 public class Offer {
-	int id;
+	public int id;
 	Company comp;
 	String title;
 	String desc;

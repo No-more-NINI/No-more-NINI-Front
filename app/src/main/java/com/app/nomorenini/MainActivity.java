@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,20 +27,17 @@ public class MainActivity extends AppCompatActivity {
 	private ArrayList permissions = new ArrayList();
 
 	private final static int ALL_PERMISSIONS_RESULT = 101;
-	LocationTracker locationTrack;
+			LocationTracker locationTrack;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		Intent k = new Intent(this, LoginActivity.class);
+		startActivity(k);
 		//https://nw843l9pdoz.typeform.com/to/EoxyAnct
-		/*WebView myWebView = new WebView(this);
-		setContentView(myWebView);
-		if (Build.VERSION.SDK_INT >= 19) {
-			myWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-		}
-		myWebView.loadUrl("https://nw843l9pdoz.typeform.com/to/EoxyAnct");*/
-		permissions.add(ACCESS_FINE_LOCATION);
+
+		/*permissions.add(ACCESS_FINE_LOCATION);
 		permissions.add(ACCESS_COARSE_LOCATION);
 
 		permissionsToRequest = findUnAskedPermissions(permissions);
@@ -140,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 				}
 
 				break;
-		}
+		}*/
 
 	}
 
@@ -156,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		locationTrack.stopListener();
+		//locationTrack.stopListener();
 	}
 }
 

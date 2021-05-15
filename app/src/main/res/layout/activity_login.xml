@@ -11,6 +11,7 @@
         android:background="@color/colorAccent"
         android:layout_height="100px">USR</TextView>
     <EditText
+        android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="100px"></EditText>
     <TextView
@@ -18,9 +19,11 @@
         android:background="@color/colorAccent"
         android:layout_height="100px">PASS</TextView>
     <EditText
+        android:id="@+id/pass"
         android:layout_width="match_parent"
         android:layout_height="100px"></EditText>
     <Button
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="100px"
         android:text="Log In"></Button>
