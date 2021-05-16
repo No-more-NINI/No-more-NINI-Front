@@ -1,31 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:orientation="vertical">
-    <TextView
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
-        android:background="@color/colorAccent"
-        android:layout_height="100px">USR</TextView>
+        android:layout_height="120dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/bg_header_custom2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
     <EditText
         android:id="@+id/user"
-        android:layout_width="match_parent"
-        android:layout_height="100px"></EditText>
-    <TextView
-        android:layout_width="match_parent"
-        android:background="@color/colorAccent"
-        android:layout_height="100px">PASS</TextView>
+        android:hint="email@example.com"
+        android:gravity="center"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/bg_header_custom3"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        android:text="e@1"/>
+
     <EditText
         android:id="@+id/pass"
-        android:layout_width="match_parent"
-        android:layout_height="100px"></EditText>
+        android:hint="password"
+        android:gravity="center"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_header_custom3"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user"
+        android:text="pswd1"/>
+
     <Button
         android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="100px"
-        android:text="Log In"></Button>
+        android:hint="Continua"
+        android:textColorHint="#FFFFFF"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/bg_header_custom3"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pass" />
 
-</LinearLayout>
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="786dp"
+        android:layout_marginTop="310dp"
+        android:background="@drawable/bg_header_custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pass" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

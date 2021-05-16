@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 		startActivity(k);
 		//https://nw843l9pdoz.typeform.com/to/EoxyAnct
 
-		/*permissions.add(ACCESS_FINE_LOCATION);
+		permissions.add(ACCESS_FINE_LOCATION);
 		permissions.add(ACCESS_COARSE_LOCATION);
 
 		permissionsToRequest = findUnAskedPermissions(permissions);
@@ -56,9 +56,6 @@ public class MainActivity extends AppCompatActivity {
 		Button btn = (Button) findViewById(R.id.btn);
 
 
-		btn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
 
 				locationTrack = new LocationTracker(MainActivity.this);
 
@@ -75,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
 					locationTrack.showSettingsAlert();
 				}
 
-			}
-		});
+
 	}
 	private ArrayList findUnAskedPermissions(ArrayList<String> wanted) {
 		ArrayList result = new ArrayList();
@@ -138,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 				}
 
 				break;
-		}*/
+		}
 
 	}
 

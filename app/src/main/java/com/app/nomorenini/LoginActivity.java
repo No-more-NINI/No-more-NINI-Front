@@ -1,7 +1,9 @@
 package com.app.nomorenini;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -21,12 +23,78 @@ import com.app.nomorenini.model.User;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LoginActivity extends MyActivity {
+import java.util.ArrayList;
 
+
+public class LoginActivity extends MyActivity {
+	/*private ArrayList<String> permissionsToRequest;
+	private ArrayList permissionsRejected = new ArrayList();
+	private ArrayList permissions = new ArrayList();
+	private ArrayList findUnAskedPermissions(ArrayList<String> wanted) {
+		ArrayList result = new ArrayList();
+
+		for (String perm : wanted) {
+			if (!hasPermission(perm)) {
+				result.add(perm);
+			}
+		}
+
+		return result;
+	}
+	private boolean hasPermission(String permission) {
+		if (canMakeSmores()) {
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+				return (checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED);
+			}
+		}
+		return true;
+	}
+	private boolean canMakeSmores() {
+		return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
+	}
+	@TargetApi(Build.VERSION_CODES.M)
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+
+		switch (requestCode) {
+
+			case ALL_PERMISSIONS_RESULT:
+				for (String perms : permissionsToRequest) {
+					if (!hasPermission(perms)) {
+						permissionsRejected.add(perms);
+					}
+				}
+
+				if (permissionsRejected.size() > 0) {
+
+
+					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+						if (shouldShowRequestPermissionRationale((String) permissionsRejected.get(0))) {
+							showMessageOKCancel("These permissions are mandatory for the application. Please allow access.",
+									new DialogInterface.OnClickListener() {
+										@Override
+										public void onClick(DialogInterface dialog, int which) {
+											if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+												requestPermissions((String[]) permissionsRejected.toArray(new String[permissionsRejected.size()]), ALL_PERMISSIONS_RESULT);
+											}
+										}
+									});
+							return;
+						}
+					}
+
+				}
+
+				break;
+		}
+
+	}
+	*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+
 		/*WebView myWebView = new WebView(this.getBaseContext());
 		myWebView.getSettings().setDomStorageEnabled(true);
 		myWebView.getSettings().setJavaScriptEnabled(true);
@@ -85,7 +153,9 @@ public class LoginActivity extends MyActivity {
 		Log.println(Log.ERROR,"LOOOOOOK",data);
 
 		Intent k = new Intent(this, ListActivity.class);
+		k.putExtra("user",u);
 		startActivity(k);
+
 		new Location().execute(new Pair<Activity, Integer>(this,u.id));//doInBackground(new Pair(this,u.id));
 	}
 }

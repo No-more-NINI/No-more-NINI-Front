@@ -45,7 +45,7 @@ public class LocationTracker extends Service implements LocationListener {
 		getLocation();
 	}
 
-	private Location getLocation() {
+	public Location getLocation() {
 
 		try {
 			locationManager = (LocationManager) mContext
